@@ -4,8 +4,8 @@ module.exports = defineConfig({
   e2e: {
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}',
-    video: false,
-    screenshotOnRunFailure: false,
+    video: true,
+    screenshotOnRunFailure: true,
     viewportWidth: 1920,
     viewportHeight: 1080,
     projectId: 'suoo3k',
