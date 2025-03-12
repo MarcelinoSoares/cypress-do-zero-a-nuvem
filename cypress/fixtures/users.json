@@ -1,0 +1,36 @@
+{
+    "success": {
+        "firstName": "Marcelino",
+        "lastName": "de Oliveira",
+        "email": "marcelino@gmail.com",
+        "message": "Hello World!"
+    },
+    "errorInvalidEmail": {
+        "firstName": "Marcelino",
+        "lastName": "de Oliveira",
+        "email": "marcelino@gmail",
+        "message": "Hello World!"
+    },
+    "errorInvalidPhone": {
+        "firstName": "Marcelino",
+        "lastName": "de Oliveira",
+        "email": "marcelino@gmail.com",
+        "message": "Hello World!",
+        "phone": "abcdef" 
+    },
+
+    "errorMandatoryPhone": {
+        "firstName": "Marcelino",
+        "lastName": "de Oliveira",
+        "email": "marcelino@gmail.com",
+        "message": "Hello World!",
+        "phone": "" 
+    },
+    "clearForm": {
+        "firstName": "Marcelino",
+        "lastName": "de Oliveira",
+        "email": "marcelino@gmail.com",
+        "message": "Hello World!",
+        "phone": "123456789"
+    }
+}

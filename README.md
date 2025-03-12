@@ -1,28 +1,30 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# Cypress Do Zero à Nuvem
 
-👋 Seja bem-vindo(a)!
+Project containing the automated tests from the "Cypress Do Zero à Nuvem" course from Talking About Testing school.
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+## Pre-requirements
 
-## O que você vai aprender?
+To run this project, you need:
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+- [git](https://git-scm.com/downloads) (I've used version `2.34.1`)
+- [Node.js](https://nodejs.org/en/) (I've used version `v18.15.0`)
+- npm (I've used version `9.5.0`)
+- [Visual Studio Code](https://code.visualstudio.com/) or any other IDE of your preference
 
-## Vamos começar?
+## Installation
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
+
+## Tests
+
+Run `npm test` (or `npm t` for the short version) to run the tests in headless mode.
+
+Or, run `npm run cy:open` to open Cypress in interactive mode.
+
+### Support this project
+
+If you want to support this project, leave a ⭐.
 
 ___
 
-Este é um curso da **Escola Talking About Testing**.
+This project was created with ❤️ by [Your Name].
