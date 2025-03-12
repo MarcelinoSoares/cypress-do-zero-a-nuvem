@@ -8,6 +8,7 @@ module.exports = defineConfig({
     screenshotOnRunFailure: false,
     viewportWidth: 1920,
     viewportHeight: 1080,
+    projectId: 'suoo3k',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
