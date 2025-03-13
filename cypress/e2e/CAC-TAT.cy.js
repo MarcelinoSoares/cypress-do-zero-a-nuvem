@@ -16,17 +16,24 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   it('preenche os campos obrigatórios e envia o formulário.', () => {
     const user = usersData.success;
 
+    cy.clockTime();
     cy.fillMandatoryFields(user);
     cy.clickSendButton();
     cy.shouldMessageSuccess();
+    cy.tickTime();
+    cy.shouldNotMessageSuccess()
+
   });
 
   it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida.', () => {
     const user = usersData.errorInvalidEmail;
 
+    cy.clockTime();
     cy.fillMandatoryFields(user);
     cy.clickSendButton();
     cy.shouldMessageError();
+    cy.tickTime();
+    cy.shouldNotMessageError();
   });
 
   it('campo telefone continua vazio quando preenchido com um valor não numérico.', () => {
@@ -38,10 +45,13 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {
     const user = usersData.errorMandatoryPhone;
 
+    cy.clockTime();
     cy.fillMandatoryFields(user);
     cy.checkPhone();
     cy.clickSendButton();
     cy.shouldMessageError();
+    cy.tickTime();
+    cy.shouldNotMessageError();
   });
 
   it('limpa os campos do formulário.', () => {
@@ -98,5 +108,26 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
     cy.checkRemoveTarget();
+  });
+
+  it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
+    cy.showAndHide();
+  });
+
+  it('preenche o campo da área de texto usando o comando invoke', () => {
+    cy.inputWithInvoke('teste');
+  });
+
+  it('encontra o gato escondido', () => {
+    cy.showCat();
+  });
+  
+  it('faz uma requisição HTTP', () => {
+    cy.request('GET', 'https://cac-tat-v3.s3.eu-central-1.amazonaws.com/index.html')
+      .then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.statusText).to.eq('OK');
+        expect(response.body).to.include('CAC TAT');
+      });
   });
 });

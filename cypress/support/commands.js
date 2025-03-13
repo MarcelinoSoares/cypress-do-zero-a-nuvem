@@ -55,13 +55,57 @@ Cypress.Commands.add('checkAllProducts', () => {
   });
 });
 
+Cypress.Commands.add('showAndHide', () => {
+  cy.get('.success')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Mensagem enviada com sucesso.')
+      .invoke('hide')
+      .should('not.be.visible')
+  cy.get('.error')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Valide os campos obrigatórios!')
+      .invoke('hide')
+      .should('not.be.visible')
+});
+
+Cypress.Commands.add('inputWithInvoke', (text) => {
+    cy.get('#open-text-area')
+        .should('have.value', '')
+        .invoke('val', text)
+        .should('have.value', text);
+});
+
+Cypress.Commands.add('clockTime', () => {
+  cy.clock();
+});
+
+Cypress.Commands.add('tickTime', () => {
+    cy.tick(3000);
+});
+
 Cypress.Commands.add('shouldMessageSuccess', () => {
   cy.get('.success').should('be.visible');
+});
+
+Cypress.Commands.add('shouldNotMessageSuccess', () => {
+    cy.get('.success').should('not.be.visible');
 });
 
 Cypress.Commands.add('shouldMessageError', () => {
   cy.get('.error').should('be.visible');
 });
+
+Cypress.Commands.add('shouldNotMessageError', () => {
+  cy.get('.error').should('not.be.visible');
+});
+
+Cypress.Commands.add('showCat', () => {
+  cy.get('#cat').invoke('show').should('be.visible');
+}); 
 
 Cypress.Commands.add('shouldPhoneFieldEmpty', () => {
   cy.get('#phone').should('have.value', '');
